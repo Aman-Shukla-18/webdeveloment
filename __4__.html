@@ -1,0 +1,102 @@
+<!-- A cool looking button with some of awsm CSS effects and javascript -->
+
+
+<html>
+<head><title>Button</title>
+    
+    <style type="text/css">
+        
+        body{
+            
+            padding: 0px;
+            margin: 0px;
+            background-color: #0094EE;
+            
+        }
+        #main{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100px;
+            width: 100px;
+            margin: 100px auto;
+            border-radius: 8px;
+            box-shadow: -10px -10px 10px rgba(255,255,255,0.2),
+                        10px 10px 10px rgba(0,0,0,0.1);
+        }
+        a{
+            text-decoration: none;
+            font-family: consolas , sans-serif;
+            color: aqua;
+            
+        }
+        div:hover{
+            cursor:pointer;
+        }
+        #circle{
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            background-color: #0094EE;
+            margin: 50px auto;
+        }
+        
+        
+        
+    
+    </style>
+    
+    
+    </head>
+
+<body>
+    
+    <div id="circle"></div>
+    
+    <div id="main" onclick="fxn()">
+    
+    
+    <a href="#">BUTTON</a>
+    
+    </div></body>
+    
+    <script type="text/javascript">
+    var clicked = 0;
+    function fxn(){
+        if(clicked == 0)
+        {
+            fxn1();
+        }
+        else{
+            fxn2();
+        }
+    }
+
+
+    function fxn1(){
+        var btn = document.getElementById("main");
+        var crkl = document.getElementById("circle");
+        btn.style.boxShadow="-10px -10px 10px rgba(255,255,255,0.2),10px 10px 10px rgba(0,0,0,0.1),inset -5px -5px 5px rgba(255,255,255,0.2),inset 5px 5px 5px rgba(0,0,0,0.1)";
+        ;btn.innerText="ON";
+        btn.style.color="aqua";
+        btn.style.fontFamily="consolas";
+        crkl.style.backgroundColor="rgba(255,255,255,0.4)";
+        crkl.style.filter="blur(3px)";
+        crkl.style.boxShadow="1px 1px 100px rgba(255,255,255,0.5),-1px -1px 100px rgba(255,255,255,0.5),1px 1px 50px rgba(255,255,255,0.5),-1px -1px 50px rgba(255,255,255,0.5)";
+        clicked = 1;
+    }
+    function fxn2(){
+        var btn = document.getElementById("main");
+        var crkl = document.getElementById("circle");
+        btn.style.boxShadow="-10px -10px 10px rgba(255,255,255,0.2),10px 10px 10px rgba(0,0,0,0.1)";
+        btn.innerText="OFF";
+        btn.style.color="aqua";
+        crkl.style.boxShadow="";
+        crkl.style.backgroundColor="#0094EE";
+        
+        btn.style.fontFamily="consolas";
+        clicked = 0;
+
+    }
+    </script>
+</html>
