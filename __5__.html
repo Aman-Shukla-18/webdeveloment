@@ -1,0 +1,194 @@
+<!-- A fully working code for calculator by using just html css and javascript-->
+
+
+<html>
+<head><title>Calculator</title>
+    <style type="text/css">
+        body{
+            padding: 0px;
+            margin: 0px;
+            font-family: consolas;
+        }
+       #heading
+        {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            font-size: 30px;
+            color: #1D1F21;
+            font-weight: bold;
+        }
+    #mainbox
+        {
+            
+            height: 450px;
+            width: 400px;
+            margin: 10px auto 0px auto;
+            border-radius: 8px;
+            box-shadow: -10px -10px 30px rgba(0,0,0,.5),
+                        10px 10px 30px rgba(0,0,0,.5);
+            background-color: #35363A;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 0.1px;
+        }
+        #display
+        {
+            width: 90%;
+            height: 100px;
+            background-color: #35363A;
+            border-radius: 5px;
+            margin: 0px 19px;
+            box-shadow:-5px -5px 5px rgba(255,255,255,0.2),
+                        5px 5px 5px rgba(0,0,0,0.2),
+                        inset -5px -5px 5px rgba(255,255,255,0.2),
+                        inset 5px 5px 5px rgba(0,0,0,0.2);
+            position: relative;
+        }
+        button{
+            width: 69px;
+            height: 75px;
+            float: left;
+            margin: 5px;
+            background-color: #202124;
+            font-weight: bold;
+            font-size: 20px;
+           
+        }
+        .opeartorbtn{
+            height: 30px;
+            width: 89px;
+            float: left;
+            margin-top: 10px;
+        }
+    
+        #result{
+            
+            font-size: 20px;
+            margin: 0px;
+            position: absolute;
+            right: 5px;
+            bottom: 5px;
+            color: aquamarine;
+        }
+    
+    
+    
+    </style></head>
+
+ <body>
+    <div id="heading"><p>Calculator</p></div>
+    <div id="mainbox">
+        
+        
+        <div id="display">  <p id="displaydata" style="font-size: 20px">0</p> 
+        <p id="result"></p>
+        </div>
+        <div id="addition"><button class = "opeartorbtn" onclick="fxnadditon()">+</button></div>
+        <div id="substraction"><button class = "opeartorbtn" onclick="fxnsubstraction()">-</button></div>
+        <div id="multiplication"><button class = "opeartorbtn" onclick="fxnmultiplication()">*</button></div>
+        <div id="division"><button class = "opeartorbtn" onclick="fxndivision()" >/</button></div>
+        
+        <div id="_0" onclick="fxn0()"><button>0</button></div>
+        <div id="_1" onclick="fxn1()"><button>1</button></div>
+        <div id="_2" onclick="fxn2()"><button>2</button></div>
+        <div id="_3" onclick="fxn3()"><button>3</button></div>
+        <div id="_4" onclick="fxn4()"> <button>4</button></div>
+        <div id="_5" onclick="fxn5()"> <button>5</button></div>
+        <div id="_6" onclick="fxn6()" ><button>6</button></div>
+        <div id="_7" onclick="fxn7()"> <button>7</button></div>
+        <div id="_8" onclick="fxn8()" ><button>8</button></div>
+        <div id="_9" onclick="fxn9()"> <button>9</button></div>
+        <div id="_dot" onclick="fxndot()"> <button>.</button></div>
+        
+        <div id="clearone" onclick="clearone()" ><button>&lt;-</button></div>
+        <div id="cleraall" onclick="clearall()"><button>C</button></div>
+        <div id="equals" ><button class = "opeartorbtn" style="width: 150px; height: 75px;margin: 4px;" onclick="fxnequals()">=</button></div>
+        
+        
+        </div>
+    </body>
+    <script type="text/javascript">
+        
+        var operator;
+    var dispdata = document.getElementById("displaydata");
+    
+        function fxn0(){
+            dispdata.innerHTML = dispdata.innerHTML+"0";
+        }
+        function fxn1(){
+            dispdata.innerHTML = dispdata.innerHTML+"1";
+        }
+        function fxn2(){
+            dispdata.innerHTML = dispdata.innerHTML+"2";
+        }
+        function fxn3(){
+            dispdata.innerHTML = dispdata.innerHTML+"3";
+        }
+        function fxn4(){
+            dispdata.innerHTML = dispdata.innerHTML+"4";
+        }
+        function fxn5(){
+            dispdata.innerHTML = dispdata.innerHTML+"5";
+        }
+       
+        function fxn6(){
+            dispdata.innerHTML = dispdata.innerHTML+"6";
+        }
+        function fxn7(){
+            dispdata.innerHTML = dispdata.innerHTML+"7";
+        }
+        function fxn8(){
+            dispdata.innerHTML = dispdata.innerHTML+"8";
+        }
+         function fxn9(){
+            dispdata.innerHTML = dispdata.innerHTML+"9";
+        }
+         function clearall(){
+            dispdata.innerHTML = "0";
+              document.getElementById("result").innerHTML="";
+        }
+         function clearone(){
+            dispdata.innerHTML = dispdata.innerHTML.slice(0,-1);
+        }
+        function fxndot(){
+            dispdata.innerHTML = dispdata.innerHTML+".";
+        }
+        function fxnadditon(){
+            operator = "+";
+            document.getElementById("result").innerHTML=dispdata.innerHTML+"+";
+            dispdata.innerHTML="0";
+        }function fxnsubstraction(){
+            operator = "-";
+            document.getElementById("result").innerHTML=dispdata.innerHTML+"-";
+            dispdata.innerHTML="0";
+        }function fxnmultiplication(){
+            operator = "*";
+            document.getElementById("result").innerHTML=dispdata.innerHTML+"*";
+            dispdata.innerHTML="0";
+        }function fxndivision(){
+            operator = "/";
+            document.getElementById("result").innerHTML=dispdata.innerHTML+"/";
+            dispdata.innerHTML="0";
+        }
+        function fxnequals(){
+            var x = document.getElementById("result").innerHTML;
+            var firstoperand = Number(x.slice(0,-1));
+            var secondoperand = Number(dispdata.innerHTML);
+            
+            switch(operator)
+                {
+                        case"+":document.getElementById("result").innerHTML=(firstoperand+secondoperand);
+                        break;
+                        case"-":document.getElementById("result").innerHTML=(firstoperand-secondoperand);
+                        break;
+                        case"*":document.getElementById("result").innerHTML=(firstoperand*secondoperand);
+                        break;
+                        case"/":document.getElementById("result").innerHTML=(firstoperand/secondoperand);
+                        break;
+                        
+                }
+        }
+    </script>
+
+</html>
