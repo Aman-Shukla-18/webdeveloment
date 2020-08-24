@@ -1,0 +1,71 @@
+<!-- using the java script to automatically zoomin and out when mouse goes on it and away. -->
+
+
+<html>
+
+
+<head>
+    
+    <style type="text/css">
+    
+        #object{
+            width: 200px;
+            height: 200px;
+            background-color: coral;
+            border-radius: 50%;
+            margin: 0 auto;
+        }
+    
+    </style>
+    
+    </head>
+<body>
+    
+    <div id="object" onmouseover="increase()" onmouseout="decrease()"></div>
+    
+    
+    
+    </body>
+<script type="text/javascript">
+    var zoominid;
+    var zoomoutid;
+    var width= 200;
+    var height = 200;
+    function increase(){
+        zoominid = window.setInterval(zoomin,20);
+         window.clearInterval(zoomoutid);
+    }
+    function zoomin(){
+        
+        if (width<600)
+            {
+                width = width + 2;
+                height = height + 2;
+                document.getElementById("object").style.width = width;
+                document.getElementById("object").style.height = height;
+            }
+        else{
+            window.clearInterval(zoominid);
+        }
+    }
+    
+    function decrease(){
+        zoomoutid = window.setInterval(zoomout,20);
+         window.clearInterval(zoominid);
+    }
+    function zoomout(){
+        
+        if (width>200)
+            {
+                width = width - 2;
+                height = height - 2;
+                document.getElementById("object").style.width = width;
+                document.getElementById("object").style.height = height;
+            }
+        else{
+            window.clearInterval(zoomoutid);
+        }
+    }
+    </script>
+
+</html>
