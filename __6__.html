@@ -1,0 +1,143 @@
+<!-- different type of shadows we can use in our page  -->
+
+
+<html>
+
+
+<head><title>Shadow</title>
+    
+    <style type="text/css">
+        body{
+            margin: 0px;
+            padding: 0px;
+            background: #00E863;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+           
+            
+        }
+        
+
+        #center{
+            width: 500px;
+            height: 500px;
+            padding: 20px;
+            font-family: consolas;
+            font-size: 30px;
+            color: rgba(0,0,0,0.1);
+            position: relative;
+            
+        }
+        
+        #firstbox{
+            background-color: #0DBF41;
+            height: 150px;
+            float:left;
+            width: 150px;
+            margin: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            border-radius: 10px;
+ 
+            
+        }
+        #secondbox{
+            background-color: #0DBF41;
+            margin: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            height: 150px;
+            float:left;
+            width: 150px;
+            border-radius: 10px;
+         
+        }
+        #thirdbox{
+            background-color: antiquewhite;
+            margin: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            height: 150px;
+            width: 150px;
+            float:left;
+           
+        }
+        #fourthbox{
+            background-color: antiquewhite;
+            margin: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            height: 150px;
+            width: 150px;
+            float:left;
+        }
+        #firstbox:before{
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            right: 0px;
+            width: 90%;
+            height: 15px;
+            background: rgba(0,0,0,0.3);
+            transform-origin: left;
+            transform: skewY(8deg);
+            z-index: -1;
+            filter: blur(5px);
+        }
+         #secondbox:before{
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            right: 5%;
+            width: 90%;
+            height: 15px;
+             border-radius: 50%;
+            background: rgba(0,0,0,0.3);
+            z-index: -1;
+            filter: blur(5px);
+        }
+        #thirdbox{
+            background: #00E863;
+            border-radius: 10px;
+            box-shadow: -15px -15px 15px rgba(255,255,255,0.2),
+                        15px 15px 15px rgba(0,0,0,0.1);
+        }
+         #fourthbox{
+            background: #00E863;
+            border-radius: 10px;
+            box-shadow: -15px -15px 15px rgba(255,255,255,0.2),
+                        15px 15px 15px rgba(0,0,0,0.1),
+                        inset -5px -5px 5px rgba(255,255,255,0.2),
+                        inset 5px 5px 5px rgba(0,0,0,0.1);
+                        
+        }
+        
+        
+        
+    </style>
+    </head>
+    <body>
+    
+        <div id="center">
+        
+        <div id="firstbox">First</div>
+        <div id="secondbox">Second</div>
+        <div id="thirdbox">Third</div>
+        <div id="fourthbox">Fourth</div>
+        
+        
+        
+        </div>
+    
+    
+    </body>
+</html>
