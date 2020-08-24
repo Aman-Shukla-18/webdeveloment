@@ -1,0 +1,64 @@
+<!-- fading in and out using button in javascript   -->
+
+
+
+<html>
+<head>
+    
+    <style type="text/css">
+    
+        #object{
+            height: 300px;
+            width: 300px;
+            background-color: crimson;
+            border-radius: 50%;
+            opacity: 1.0;
+        }
+    </style>
+    
+    </head>
+
+
+<body>
+<button id="fadein" onclick="fadein()">FadeIN</button>  
+    <div id="object"></div>
+<button id="fadeout" onclick="fadeout()">FadeOUT</button>   
+    <button id="stop" onclick="stop()">STOP</button> 
+    </body>
+
+<script type="text/javascript">
+    
+    var opacity =  1 ;
+    var fin;
+    var fout;
+    
+    function fxn1(){
+         opacity = opacity + 0.1;
+        document.getElementById("object").style.opacity = opacity;
+       
+    }
+    function fxn2(){
+        opacity = opacity - 0.1;
+        document.getElementById("object").style.opacity = opacity;
+        
+    }
+    
+      function fadein()
+    {
+       fin = window.setInterval(fxn1,1000);
+        
+    }
+function fadeout()
+    {
+        
+       fout = window.setInterval(fxn2,1000);
+    }
+    function stop()
+    {
+        
+        window.clearInterval(fin);
+        window.clearInterval(fout);
+    }
+    
+    </script>
+</html>
